@@ -1,0 +1,1 @@
+mtg_auto_modern_burn
