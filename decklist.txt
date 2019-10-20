@@ -1,18 +1,12 @@
-LANDS
-4 Fiery Islet
-11 Mountain
-4 Sunbaked Canyon
-CREATURES
+19 Mountain
 4 Eidolon of the Great Revel
 4 Fanatical Firebrand
 4 Goblin Guide
 4 Monastery Swiftspear
-INSTANTS and SORC.
 4 Lava Spike
 2 Light Up the Stage
 4 Lightning Bolt
 4 Rift Bolt
 3 Shard Volley
 4 Skewer the Critics
-OTHER SPELLS
 4 Seal of Fire
