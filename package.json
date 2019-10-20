@@ -1,0 +1,34 @@
+{
+  "name": "mtg_price_scrapper",
+  "version": "1.0.0",
+  "description": "Web scrapes for mtg cards on the internet",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run build:live",
+    "build:live": "nodemon --exec ./node_modules/.bin/ts-node -- ./index.ts",
+    "log-text": "./node_modules/.bin/ts-node -- ./index.ts > ./output/detail.txt",
+    "log": "./node_modules/.bin/ts-node -- ./index.ts"
+  },
+  "keywords": [],
+  "author": "JohnJasonFisher",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^10.14.18",
+    "nodemon": "^1.19.2",
+    "ts-node": "^6.2.0",
+    "typescript": "^2.9.2"
+  },
+  "dependencies": {
+    "@types/cheerio": "^0.22.13",
+    "@types/request": "^2.48.3",
+    "@types/request-promise": "^4.1.44",
+    "cheerio": "^1.0.0-rc.3",
+    "mtgsdk-ts": "^1.1.2",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:JohnJasonFisher/mtgPriceScrapper.git"
+  }
+}

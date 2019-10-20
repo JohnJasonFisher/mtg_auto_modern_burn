@@ -1,12 +1,12 @@
-19 Mountain
-4 Eidolon of the Great Revel
-4 Fanatical Firebrand
-4 Goblin Guide
-4 Monastery Swiftspear
-4 Lava Spike
-2 Light Up the Stage
-4 Lightning Bolt
-4 Rift Bolt
-3 Shard Volley
-4 Skewer the Critics
-4 Seal of Fire
+4x Galvanic Blast
+4x Lava Spike
+2x Light Up the Stage
+4x Lightning Bolt
+19x Mountain
+4x Rift Bolt
+4x Seal of Fire
+3x Shard Volley
+4x Shock
+4x Skewer the Critics
+4x Slaying Fire
+4x Wizard's Lightning
