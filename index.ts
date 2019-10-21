@@ -46,7 +46,7 @@ const keepHand = (hand: PlayingCard[]): boolean => {
 }
 
 const hasCmcOneSpell = (hand: PlayingCard[]): boolean => {
-    const listOfCmcSpells = hand.filter((card: PlayingCard) => card.type != 'land' && card.cmc === 1)
+    const listOfCmcSpells = hand.filter((card: PlayingCard) => card.cmc === 1)
     if (listOfCmcSpells.length < 1) {
         return false
     }
