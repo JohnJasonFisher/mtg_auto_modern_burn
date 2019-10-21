@@ -1,7 +1,7 @@
 import PlayingCard from "../domain/PlayingCard"
 
-export const draw = (deck: PlayingCard[]) => {
+export const draw = (deck: PlayingCard[], hand: PlayingCard[]): void => {
     if (deck.length > 0) {
-        deck.pop()
+        hand.push(deck.pop()!)
     }
 }
