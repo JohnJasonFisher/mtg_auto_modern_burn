@@ -1,12 +1,23 @@
-4x Lava Spike
-2x Light Up the Stage
-4x Lightning Bolt
-4x Lightning Strike
-19x Mountain
-4x Seal of Fire
-3x Shard Volley
-4x Shock
-4x Skewer the Critics
-4x Skullcrack
-4x Slaying Fire
-4x Wizard's Lightning
+1x All is Dust
+1x World Breaker
+2x Ulamog, the Ceaseless Hunger
+2x Walking Ballista
+2x Wurmcoil Engine
+4x Chromatic Sphere
+4x Chromatic Star
+4x Expedition Map
+2x Oblivion Stone
+4x Ancient Stirrings
+4x Sylvan Scrying
+1x Dismember
+1x Relic of Progenitus
+4x Karn Liberated
+3x Karn, the Great Creator
+2x Ugin, the Spirit Dragon
+1x Blast Zone
+4x Forest
+1x Ghost Quarter
+1x Sanctum of Ugin
+4x Urza's Mine
+4x Urza's Power Plant
+4x Urza's Tower
