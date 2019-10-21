@@ -1,79 +1,13 @@
-import {convertFileToDeckList} from './utils/TextFileConverter'
-import {toPlayDeck} from './utils/toPlayDeck'
 
+import {shuffleDeck} from './gameMechanics/shuffleDeck'
 import PlayingCard from './domain/PlayingCard'
+import * as playdeckJson from "./decks.json"
+import { draw } from './gameMechanics/draw'
 
 console.log('Start Script!')
+console.log('Using the burn deck')
 
-// const deckList = convertFileToDeckList('./decklist.txt')
-// const deck = toPlayDeck(deckList)
-
-// setTimeout(function(){ console.log(deck) }, 60000)
-
-let deck = [
-    { name: 'Mountain', cost: 0, type: 'land' },
-    { name: 'Mountain', cost: 0, type: 'land' },
-    { name: 'Mountain', cost: 0, type: 'land' },
-    { name: 'Mountain', cost: 0, type: 'land' },
-    { name: 'Mountain', cost: 0, type: 'land' },
-    { name: 'Mountain', cost: 0, type: 'land' },
-    { name: 'Mountain', cost: 0, type: 'land' },
-    { name: 'Mountain', cost: 0, type: 'land' },
-    { name: 'Mountain', cost: 0, type: 'land' },
-    { name: 'Mountain', cost: 0, type: 'land' },
-    { name: 'Mountain', cost: 0, type: 'land' },
-    { name: 'Mountain', cost: 0, type: 'land' },
-    { name: 'Mountain', cost: 0, type: 'land' },
-    { name: 'Mountain', cost: 0, type: 'land' },
-    { name: 'Mountain', cost: 0, type: 'land' },
-    { name: 'Mountain', cost: 0, type: 'land' },
-    { name: 'Mountain', cost: 0, type: 'land' },
-    { name: 'Mountain', cost: 0, type: 'land' },
-    { name: 'Mountain', cost: 0, type: 'land' },
-    { name: 'Lava Spike', cost: 1, type: 'Sorcery' },
-    { name: 'Lava Spike', cost: 1, type: 'Sorcery' },
-    { name: 'Lava Spike', cost: 1, type: 'Sorcery' },
-    { name: 'Lava Spike', cost: 1, type: 'Sorcery' },
-    { name: 'Lightning Bolt', cost: 1, type: 'Instant' },
-    { name: 'Lightning Bolt', cost: 1, type: 'Instant' },
-    { name: 'Lightning Bolt', cost: 1, type: 'Instant' },
-    { name: 'Lightning Bolt', cost: 1, type: 'Instant' },
-    { name: 'Shard Volley', cost: 1, type: 'Instant' },
-    { name: 'Shard Volley', cost: 1, type: 'Instant' },
-    { name: 'Shard Volley', cost: 1, type: 'Instant' },
-    { name: 'Rift Bolt', cost: 3, type: 'Sorcery' },
-    { name: 'Rift Bolt', cost: 3, type: 'Sorcery' },
-    { name: 'Rift Bolt', cost: 3, type: 'Sorcery' },
-    { name: 'Rift Bolt', cost: 3, type: 'Sorcery' },
-    { name: 'Galvanic Blast', cost: 1, type: 'Instant' },
-    { name: 'Galvanic Blast', cost: 1, type: 'Instant' },
-    { name: 'Galvanic Blast', cost: 1, type: 'Instant' },
-    { name: 'Galvanic Blast', cost: 1, type: 'Instant' },
-    { name: 'Light Up the Stage', cost: 3, type: 'Sorcery' },
-    { name: 'Light Up the Stage', cost: 3, type: 'Sorcery' },
-    { name: 'Seal of Fire', cost: 1, type: 'Enchantment' },
-    { name: 'Seal of Fire', cost: 1, type: 'Enchantment' },
-    { name: 'Seal of Fire', cost: 1, type: 'Enchantment' },
-    { name: 'Seal of Fire', cost: 1, type: 'Enchantment' },
-    { name: "Wizard's Lightning", cost: 3, type: 'Instant' },
-    { name: "Wizard's Lightning", cost: 3, type: 'Instant' },
-    { name: "Wizard's Lightning", cost: 3, type: 'Instant' },
-    { name: "Wizard's Lightning", cost: 3, type: 'Instant' },
-    { name: 'Skewer the Critics', cost: 3, type: 'Sorcery' },
-    { name: 'Skewer the Critics', cost: 3, type: 'Sorcery' },
-    { name: 'Skewer the Critics', cost: 3, type: 'Sorcery' },
-    { name: 'Skewer the Critics', cost: 3, type: 'Sorcery' },
-    { name: 'Slaying Fire', cost: 3, type: 'Instant' },
-    { name: 'Slaying Fire', cost: 3, type: 'Instant' },
-    { name: 'Slaying Fire', cost: 3, type: 'Instant' },
-    { name: 'Slaying Fire', cost: 3, type: 'Instant' },
-    { name: 'Shock', cost: 1, type: 'Instant' },
-    { name: 'Shock', cost: 1, type: 'Instant' },
-    { name: 'Shock', cost: 1, type: 'Instant' },
-    { name: 'Shock', cost: 1, type: 'Instant' }
-  ]
-
-  const playingDeck = deck.map(item =>
+const playingDeck: PlayingCard[] = playdeckJson['burn'].map( (item: any) =>
     new PlayingCard(item.name, item.cost, item.type)
 )
 
@@ -81,27 +15,31 @@ let deck = [
 
 const EnemyLife = 20
 
-function shuffle (array: any[]) {
-    var i = 0
-      , j = 0
-      , temp = null
-  
-    for (i = array.length - 1; i > 0; i -= 1) {
-      j = Math.floor(Math.random() * (i + 1))
-      temp = array[i]
-      array[i] = array[j]
-      array[j] = temp
-    }
-  }
+shuffleDeck(playingDeck)
 
-shuffle(playingDeck)
-
-const hand = []
+const hand: PlayingCard[] = []
 
 for (var i = 0; i < 7; i++) {
-    hand.push(playingDeck.pop())
+    draw(playingDeck)
 }
 
+console.log('*** Starting hand ***')
 console.log(hand.length)
 console.log(hand)
-console.log(playingDeck.length)
+
+const keepHand = (hand: PlayingCard[]): boolean => {
+    let shouldKeep = false
+    let landCount = 0
+
+    hand.forEach(card =>
+        card.type === 'land' ? landCount += 1 : null
+    )
+
+    landCount >= 2 && landCount <= 3 ? shouldKeep = true : null
+    
+    // TODO: look for 1 spell with cmc < 1
+
+    return shouldKeep
+}
+
+console.log(keepHand(hand))
