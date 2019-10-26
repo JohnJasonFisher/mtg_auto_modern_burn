@@ -36,10 +36,8 @@ export const toPlayDeck = (decklist: DeckCard[]): PlayingCard[] => {
     return newPlayDeck
 }
 
-const getCardData = (name: string) => {
-    return Cards.where({name: name}).then(results => {
-        var result = {cmc: results[0].cmc, type: results[0].types[0]}
-        // console.log(result)
-        return result
-    })
+const getCardData = async (name: string) => {
+    const results = await Cards.where({name: name})
+    const result = {cmc: results[0].cmc, type: results[0].types[0]}
+    return result
 }
