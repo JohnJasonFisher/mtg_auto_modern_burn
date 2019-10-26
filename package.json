@@ -6,8 +6,7 @@
   "scripts": {
     "start": "npm run build:live",
     "build:live": "nodemon --exec ./node_modules/.bin/ts-node -- ./index.ts",
-    "log-text": "./node_modules/.bin/ts-node -- ./index.ts > ./output/detail.txt",
-    "log": "./node_modules/.bin/ts-node -- ./index.ts"
+    "fetchDeckList": "./node_modules/.bin/ts-node ./buildDecklist"
   },
   "keywords": [],
   "author": "JohnJasonFisher",
