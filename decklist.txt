@@ -1,18 +1,3 @@
-1x All is Dust
-1x World Breaker
-2x Ulamog, the Ceaseless Hunger
-2x Walking Ballista
-2x Wurmcoil Engine
-4x Chromatic Sphere
-4x Chromatic Star
-4x Expedition Map
-2x Oblivion Stone
-4x Ancient Stirrings
-4x Sylvan Scrying
-1x Dismember
-1x Relic of Progenitus
-4x Karn Liberated
-3x Karn, the Great Creator
 2x Ugin, the Spirit Dragon
 1x Blast Zone
 4x Forest

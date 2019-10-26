@@ -3,41 +3,36 @@ import PlayingCard from '../domain/PlayingCard'
 
 import {Cards} from 'mtgsdk-ts'
 
-export const toPlayDeck = (decklist: DeckCard[]): PlayingCard[] => {
-    const newPlayDeck: PlayingCard[]= []
-    decklist.forEach(item => {
-        const name = item.name
-        const quantity = item.quantity
-        let cost = 0
-        let type = 'land'
+export const toPlayDeck = (decklist: DeckCard[]): PlayingCard[] | void => {
 
-        if (name !== 'Mountain') {
-            let carddata = getCardData(name)
-            .then(res => {
-                cost = res.cmc
-                type = res.type
+	const newPlayDeck: PlayingCard[] = []
 
-                const newPlayCard = new PlayingCard(name, cost, type)
+	decklist.forEach( async (item: DeckCard): void => {
+		const name = item.name
+		const quantity = item.quantity
+		let cost = 0
+		let type = 'land'
 
-                for (var i = 0; i < quantity; i++) {
-                    newPlayDeck.push(newPlayCard)
-                }
-                return newPlayDeck
-            })
-        } else {
-            const newPlayCard = new PlayingCard(name, cost, type)
+		// TODO: this function needs to wait for data to come in.
+		getCardData(name)
+		.then(res => {
+			cost = res.cmc
+			type = res.types
+		})
 
-            for (var i = 0; i < quantity; i++) {
-                newPlayDeck.push(newPlayCard)
-            }
-        }
-    })
+		const newPlayCard = new PlayingCard(name, cost, type)
 
-    return newPlayDeck
+		for (var i = 0; i < quantity; i++) {
+			newPlayDeck.push(newPlayCard)
+		}
+	})
+
+	return newPlayDeck
 }
 
+// TODO: maybe I need this guy to return a promise
 const getCardData = async (name: string) => {
-    const results = await Cards.where({name: name})
-    const result = {cmc: results[0].cmc, type: results[0].types[0]}
-    return result
+	const results = await Cards.where({name: name})
+	const result = {cmc: results[0].cmc, types: results[0].types[0]}
+	return result
 }
