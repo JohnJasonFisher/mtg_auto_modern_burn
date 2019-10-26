@@ -6,4 +6,4 @@ const deck = toPlayDeck(deckList)
 
 setTimeout(() => {
     console.log(deck)
-}, 20000)
+}, 10000)

@@ -4,8 +4,7 @@
   "description": "Web scrapes for mtg cards on the internet",
   "main": "index.js",
   "scripts": {
-    "start": "npm run build:live",
-    "build:live": "nodemon --exec ./node_modules/.bin/ts-node -- ./index.ts",
+    "play": "./node_modules/.bin/ts-node ./index.ts",
     "fetchDeckList": "./node_modules/.bin/ts-node ./buildDecklist"
   },
   "keywords": [],

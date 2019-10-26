@@ -7,7 +7,7 @@ export const toPlayDeck = (decklist: DeckCard[]): PlayingCard[] | void => {
 
 	const newPlayDeck: PlayingCard[] = []
 
-	decklist.forEach( async (item: DeckCard): void => {
+	decklist.forEach( async (item: DeckCard) => {
 		const name = item.name
 		const quantity = item.quantity
 		let cost = 0
