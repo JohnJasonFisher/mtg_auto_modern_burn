@@ -3,7 +3,7 @@ import PlayingCard from '../domain/PlayingCard'
 
 import {Cards} from 'mtgsdk-ts'
 
-export const toPlayDeck = async (decklist: DeckCard[]): Promise<PlayingCard[] | void> => {
+export const toPlayDeck = async (decklist: DeckCard[]): Promise<PlayingCard[]> => {
 
 	const newPlayDeck: PlayingCard[] = []
 

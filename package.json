@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "play": "./node_modules/.bin/ts-node ./index.ts",
-    "fetchDeckList": "./node_modules/.bin/ts-node ./buildDecklist"
+    "fetchDeckList": "./node_modules/.bin/ts-node ./buildDecklist burn"
   },
   "keywords": [],
   "author": "JohnJasonFisher",
