@@ -1,9 +1,9 @@
 export default class PlayingCard {
     name: string
-    cmc: Number
-    type: String
+    cmc: number
+    type: string
 
-    constructor(name: string, cmc: Number, type: String) {
+    constructor(name: string, cmc: number, type: string) {
         this.name = name
         this.cmc = cmc
         this.type = type

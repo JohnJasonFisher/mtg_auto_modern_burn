@@ -1,7 +1,10 @@
 import {convertFileToDeckList} from './utils/TextFileConverter'
 import {toPlayDeck} from './utils/toPlayDeck'
+import DeckCard from './domain/DeckCard'
 
-const deckList = convertFileToDeckList('./decklist.txt')
-const deck = toPlayDeck(deckList)
+const deckList: DeckCard[] = convertFileToDeckList('./decklist.txt')
 
-setTimeout(function(){ console.log(deck) }, 60000)
+;(async deckList => {
+    const playingDeck = await toPlayDeck(deckList)
+    console.log(playingDeck)
+})(deckList)
