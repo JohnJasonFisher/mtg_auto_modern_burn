@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "unit-test": "jest",
+    "unit-test-watch": "jest --watch",
     "play": "./node_modules/.bin/ts-node ./index.ts",
     "fetchDeckList": "./node_modules/.bin/ts-node ./buildDecklist burn"
   },
