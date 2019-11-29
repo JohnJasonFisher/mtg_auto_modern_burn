@@ -1,4 +1,4 @@
-export function shuffleDeck (array: any[]) {
+export function shuffleDeck (array: any[]): any[] {
     var i = 0
         , j = 0
         , temp = null
@@ -9,4 +9,5 @@ export function shuffleDeck (array: any[]) {
         array[i] = array[j]
         array[j] = temp
     }
+    return array
 }

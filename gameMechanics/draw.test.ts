@@ -10,4 +10,4 @@ it('draws a card from an empty playing deck', () => {
 
     expect(testDeck).toHaveLength(0)
     expect(testHand).toHaveLength(1)
-});
+})
